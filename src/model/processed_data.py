@@ -1,7 +1,6 @@
 from pathlib import Path
 from typing import Optional
 import pandas as pd
-import numpy as np
 
 def find_project_root() -> Optional[Path]:
     current = Path(".").resolve()

@@ -1,0 +1,9 @@
+wget
+scikit-learn
+pandas
+seaborn
+matplotlib
+pathlib
+typing
+numpy
+json

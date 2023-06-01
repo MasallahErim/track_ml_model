@@ -15,7 +15,7 @@ jobs:
 	        git config --global --add safe.directory /__w/track_ml_model/track_ml_model
           dvc repro # her dosyanın ciktisini yeniden üretecek
           git fetch --prune
-          dvc outpust/metrics diff --show-md master > report.md
+          dvc metrics diff --show-md master > report.md
 
           # add figure to report.md
           echo "## Validation restulr by region"

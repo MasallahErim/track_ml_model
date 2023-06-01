@@ -6,4 +6,4 @@ matplotlib
 pathlib
 typing
 numpy
-json
+jsonlib

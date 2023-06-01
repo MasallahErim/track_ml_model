@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  processed_data:
+    cmd: python src/model/processed_data.py
+    deps:
+    - path: src/data/raw/farms_data.csv
+      md5: a6aec8da63a5fa2619af025a76746f29
+      size: 68868
+    - path: src/model/processed_data.py
+      md5: 5c2dc2d9100ced3a783e3c600aff05e8
+      size: 1562
+    outs:
+    - path: src/data/processed/processed_farms_data.csv
+      md5: 03269b6c0a766dc80e090326008765b3
+      size: 24333
+  train:
+    cmd: python src/model/train.py
+    deps:
+    - path: src/data/processed/processed_farms_data.csv
+      md5: 03269b6c0a766dc80e090326008765b3
+      size: 24333
+    - path: src/model/train.py
+      md5: 508d2203d332ab161bb71efad26005ca
+      size: 1925
+    outs:
+    - path: outputs/by_region.png
+      md5: b4307df0897722d6bba3645a0438a859
+      size: 7535
+    - path: outputs/metrics.json
+      md5: 07f58d492ca33299bc4d55272daa05cb
+      size: 90

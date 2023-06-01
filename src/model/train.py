@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LogisticRegression
 
 from sklearn import preprocessing
 from sklearn.model_selection import cross_val_predict
@@ -53,7 +53,7 @@ imp.fit(X)
 X = imp.transform(X)
 
 
-clf = LinearRegression()
+clf = LogisticRegression()
 yhat = cross_val_predict(clf, X, y, cv=10)
 
 acc = np.mean(yhat==y)
